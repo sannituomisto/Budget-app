@@ -5,3 +5,4 @@
 [gitlog.txt](https://github.com/sannituomisto/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
 
 tehdään muutos
+tehdään toinen muutos
