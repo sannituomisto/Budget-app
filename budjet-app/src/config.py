@@ -8,5 +8,5 @@ try:
 except FileNotFoundError:
     pass
 
-DATABASE_FILENAME = os.getenv('DATABASE_FILENAME') or 'database.sqlite'
-DATABASE_FILE_PATH = os.path.join(dirname, '..', 'data', DATABASE_FILENAME)
+DB_FILENAME = os.getenv('DB_FILENAME') or 'database.sqlite'
+DB_FILE_PATH = os.path.join(dirname, '..', 'data', DB_FILENAME)
