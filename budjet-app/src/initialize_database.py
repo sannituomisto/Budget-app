@@ -4,7 +4,7 @@ from database_connection import get_database_connection
 def drop_tables(connection):
     cursor = connection.cursor()
 
-    cursor.execute("DROP TABLE Users;")
+    cursor.execute("DROP TABLE IF EXISTS Users;")
 
     connection.commit()
 
