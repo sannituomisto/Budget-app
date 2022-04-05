@@ -5,4 +5,4 @@
 #### Työaikakirjanpito
 [tyoaikakirjanpito.md](https://github.com/sannituomisto/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 ### Changelog
-[changelog.md]()
+[changelog.md](https://github.com/sannituomisto/ot-harjoitustyo/blob/master/budjet-app/dokumentaatio/changelog.md)
