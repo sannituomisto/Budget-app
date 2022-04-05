@@ -1,12 +1,12 @@
-from src.entities.user import User
+from entities.user import User
 
-from src.repositories.user_repository import (user_repository as default_user_repository)
+from repositories.user_repository import user_repository
 
 class UsernameExistsError(Exception):
     pass
 
 class BudjetServices:
-    def __init__(self, user_repository=default_user_repository):
+    def __init__(self, user_repository):
         #self._user = None
         self._user_repository = user_repository
 
