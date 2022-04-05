@@ -4,5 +4,5 @@
 [vaatimusmaarittely.md](https://github.com/sannituomisto/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 #### Työaikakirjanpito
 [tyoaikakirjanpito.md](https://github.com/sannituomisto/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
-### Changelog
+#### Changelog
 [changelog.md](https://github.com/sannituomisto/ot-harjoitustyo/blob/master/budjet-app/dokumentaatio/changelog.md)
