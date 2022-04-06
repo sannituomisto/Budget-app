@@ -13,21 +13,21 @@ class UserRepository:
         cursor = self._connection.cursor()
         cursor.execute("SELECT * FROM Users")
         rows = cursor.fetchall()
-        return list(map(get_user_by_row, rows))
+        return rows
         
     
     def find_by_username(self, username):
         cursor = self._connection.cursor()
         cursor.execute("SELECT * FROM Users WHERE username = ?", [username])
         row = cursor.fetchone()
-        return get_user_by_row(row)
+        return row
 
     
     def create(self, user):
         cursor = self._connection.cursor()
         cursor.execute("INSERT into Users (username, password) VALUES (?, ?)",[user.username, user.password])
         self._connection.commit()
-        return "User created"
+        return 
 
     
     def delete_all(self):
