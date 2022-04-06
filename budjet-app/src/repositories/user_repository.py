@@ -1,8 +1,5 @@
-from entities.user import User
+#from entities.user import User
 from database_connection import get_database_connection
-
-def get_user_by_row(row):
-    return User(row['username'], row['password']) if row else None
 
 
 class UserRepository:
@@ -13,19 +10,22 @@ class UserRepository:
         cursor = self._connection.cursor()
         cursor.execute("INSERT into Users (username, password) VALUES (?, ?)",[user.username, user.password])
         self._connection.commit()
-        return 
+        return "User created successfully"
 
     def find_by_username(self, username):
         cursor = self._connection.cursor()
         cursor.execute("SELECT * FROM Users WHERE username = ?", [username])
         row = cursor.fetchone()
-        return row
+        return (row['username'], row['password'])
 
     def find_all(self):
         cursor = self._connection.cursor()
         cursor.execute("SELECT * FROM Users")
         rows = cursor.fetchall()
-        return rows
+        list=[]
+        for i in rows:
+            list.append((i['username'],i['password']))
+        return list
         
     def delete_all(self):
         cursor = self._connection.cursor()
