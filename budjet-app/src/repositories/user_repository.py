@@ -9,27 +9,24 @@ class UserRepository:
     def __init__(self, connection):
         self._connection=connection
 
-    def find_all(self):
-        cursor = self._connection.cursor()
-        cursor.execute("SELECT * FROM Users")
-        rows = cursor.fetchall()
-        return rows
-        
-    
-    def find_by_username(self, username):
-        cursor = self._connection.cursor()
-        cursor.execute("SELECT * FROM Users WHERE username = ?", [username])
-        row = cursor.fetchone()
-        return row
-
-    
     def create(self, user):
         cursor = self._connection.cursor()
         cursor.execute("INSERT into Users (username, password) VALUES (?, ?)",[user.username, user.password])
         self._connection.commit()
         return 
 
-    
+    def find_by_username(self, username):
+        cursor = self._connection.cursor()
+        cursor.execute("SELECT * FROM Users WHERE username = ?", [username])
+        row = cursor.fetchone()
+        return row
+
+    def find_all(self):
+        cursor = self._connection.cursor()
+        cursor.execute("SELECT * FROM Users")
+        rows = cursor.fetchall()
+        return rows
+        
     def delete_all(self):
         cursor = self._connection.cursor()
         cursor.execute("DELETE FROM Users")
