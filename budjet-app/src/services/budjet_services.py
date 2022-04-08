@@ -1,7 +1,7 @@
 from entities.user import User
 from repositories.user_repository import user_repository
 
-class UsernameExistsError(Exception):
+class UsernameError(Exception):
     pass
 
 class BudjetServices:
@@ -11,7 +11,7 @@ class BudjetServices:
     def create_user(self, username, password):
         user_existing = self._user_repository.find_by_username(username)
         if user_existing:
-            raise UsernameExistsError(f'This username already exists')
+            raise UsernameError(f'Choose another password, {username} already exists')
         user = self._user_repository.create(User(username, password))
         return user
 
