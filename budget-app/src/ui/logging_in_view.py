@@ -32,8 +32,8 @@ class LoginView:
         password = self._password_entry.get()
 
         try:
-            budjet_services.login(username, password)
-            self._handle_budjet_start()
+            budget_services.login(username, password)
+            self._handle_budget_start()
         
         except InvalidCredentialsError:
             self._show_error('Invalid username or password')

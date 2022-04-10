@@ -4,7 +4,7 @@ from tkinter import Tk
 
 def main():
     window = Tk()
-    window.title('Budjet-app')
+    window.title('Budget-app')
     ui_view = UI(window)
     ui_view.start()
     window.mainloop()

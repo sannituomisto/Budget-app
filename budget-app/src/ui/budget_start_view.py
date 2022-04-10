@@ -1,6 +1,6 @@
 from tkinter import Tk, ttk, constants, StringVar
 
-class BudjetStartView:
+class BudgetStartView:
     def __init__(self, root):
         self._root = root
         self._categories = ('Food', 'Bills', 'Transportation',
@@ -22,7 +22,7 @@ class BudjetStartView:
 window = Tk()
 window.title("TkInter example")
 
-ui =BudjetStartView(window)
+ui =BudgetStartView(window)
 ui.view()
 
 window.mainloop()
