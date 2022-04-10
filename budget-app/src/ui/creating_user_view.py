@@ -1,5 +1,5 @@
 from tkinter import Tk, ttk, constants, StringVar
-from services.budjet_services import budjet_services, UsernameError
+from services.budget_services import budget_services, UsernameError
 
 class CreateNewUserView:
     def __init__(self, root, handle_loggin_in):

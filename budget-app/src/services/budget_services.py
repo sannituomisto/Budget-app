@@ -7,7 +7,7 @@ class UsernameError(Exception):
 class InvalidCredentialsError(Exception):
     pass
 
-class BudjetServices:
+class BudgetServices:
     def __init__(self, user_repository=default_user_repository):
         self._user_repository = user_repository
 
@@ -26,7 +26,7 @@ class BudjetServices:
         return user
 
 
-budjet_services = BudjetServices()
+budget_services = BudgetServices()
 
 
     

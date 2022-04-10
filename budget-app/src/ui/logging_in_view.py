@@ -1,11 +1,11 @@
 from tkinter import Tk, ttk, constants, StringVar
-from services.budjet_services import budjet_services, InvalidCredentialsError
+from services.budget_services import budget_services, InvalidCredentialsError
 
 class LoginView:
-    def __init__(self, root, handle_creating_user, handle_budjet_start):
+    def __init__(self, root, handle_creating_user, handle_budget_start):
         self._root = root
         self._frame = None
-        self._handle_budjet_start=handle_budjet_start
+        self._handle_budget_start=handle_budget_start
         self._handle_creating_user=handle_creating_user
         self.username_entry=None
         self.password_entry=None

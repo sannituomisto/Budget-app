@@ -1,6 +1,6 @@
 from ui.creating_user_view import CreateNewUserView
 from ui.logging_in_view import LoginView
-from ui.budjet_start_view import BudjetStartView
+from ui.budget_start_view import BudgetStartView
 
 class UI:
     def __init__(self, root):
@@ -17,7 +17,7 @@ class UI:
 
     def _show_logging_in(self):
         self._hide_current_view()
-        self._current_view = LoginView(self._root,self._handle_creating_user, self._handle_budjet_start)
+        self._current_view = LoginView(self._root,self._handle_creating_user, self._handle_budget_start)
         self._current_view.pack()
 
     def _show_creating_user(self):
@@ -25,9 +25,9 @@ class UI:
         self._current_view = CreateNewUserView(self._root,self._handle_loggin_in)
         self._current_view.pack()
 
-    def _show_budjet_start(self):
+    def _show_budget_start(self):
         self._hide_current_view()
-        self._current_view= BudjetStartView(self._root)
+        self._current_view= BudgetStartView(self._root)
 
     def _handle_loggin_in(self):
         self._show_logging_in()
@@ -35,6 +35,6 @@ class UI:
     def _handle_creating_user(self):
         self._show_creating_user()
 
-    def _handle_budjet_start(self):
-        self._show_budjet_start()
+    def _handle_budget_start(self):
+        self._show_budget_start()
 
