@@ -28,6 +28,7 @@ class UI:
     def _show_budget_start(self):
         self._hide_current_view()
         self._current_view=BudgetStartView(self._root)
+        self._current_view.pack()
 
     def _handle_loggin_in(self):
         self._show_logging_in()
