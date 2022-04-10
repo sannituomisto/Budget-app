@@ -51,7 +51,7 @@ class CreateNewUserView:
             return
 
         try:
-            budjet_services.create_user(username, password)
+            budget_services.create_user(username, password)
             self._handle_loggin_in()
 
         except UsernameError:
