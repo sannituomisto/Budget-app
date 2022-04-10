@@ -7,5 +7,7 @@ try:
 except FileNotFoundError:
     pass
 
+BUDGET_FILENAME = os.getenv('BUDGET_FILENAME') or 'budget.csv'
+BUDGET_FILE_PATH = os.path.join(dirname, '..', 'data', BUDGET_FILENAME)
 DB_FILENAME = os.getenv('DB_FILENAME') or 'database.sqlite'
 DB_FILE_PATH = os.path.join(dirname, '..', 'data', DB_FILENAME)
