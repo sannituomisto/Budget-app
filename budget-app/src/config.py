@@ -7,5 +7,6 @@ try:
 except FileNotFoundError:
     pass
 
+
 DB_FILENAME = os.getenv('DB_FILENAME') or 'database.sqlite'
 DB_FILE_PATH = os.path.join(dirname, '..', 'data', DB_FILENAME)

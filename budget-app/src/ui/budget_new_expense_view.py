@@ -6,8 +6,6 @@ class BudgetNewExpenseView:
         self._root = root
         self._frame = None
         self._handle_budget_start=handle_budget_start
-        self._dwnd = PhotoImage(file='plus2.png')
-        self._dwnd2 = PhotoImage(file='minus2.png')
         self._dwnd3 = PhotoImage(file='home.png')
         self._categories = ('Food', 'Bills', 'Transportation',
                             'Clothes/accessories', 'Eating out', 'Entertainment', 'Sports',
@@ -30,9 +28,9 @@ class BudgetNewExpenseView:
         s.configure("plus/minus_button.TButton",
                     backround="systemTransparent", activebackground="-transparent")
         plus_button = ttk.Button(
-            master=self._frame, image=self._dwnd, style="plus/minus_button.TButton")
+            master=self._frame, text= "Enter", style="plus/minus_button.TButton")
         minus_button = ttk.Button(
-            master=self._frame, image=self._dwnd2, style="plus/minus_button.TButton")
+            master=self._frame, text="Enter", style="plus/minus_button.TButton")
         home_button = ttk.Button(
             master=self._frame, image=self._dwnd3, style="plus/minus_button.TButton", command=self._handle_budget_start)
         label = ttk.Label(master=self._frame, text="Budget-app")
@@ -54,8 +52,10 @@ class BudgetNewExpenseView:
         euro_label.grid(row=3, column=0, sticky=(constants.E), padx=60, pady=5)
         euro_label2.grid(row=6, column=0, sticky=(
             constants.E), padx=60, pady=5)
-        plus_button.grid(row=6, column=0, sticky=(constants.E), padx=10, pady=5)
-        minus_button.grid(row=3, column=0, sticky=(constants.E), padx=10, pady=5)
+        plus_button.grid(row=7, columnspan=2, sticky=(
+            constants.E, constants.W), padx=200, pady=5)
+        minus_button.grid(row=4, columnspan=2, sticky=(
+            constants.E, constants.W), padx=200, pady=5)
         home_button.grid(row=0, column=0, columnspan=1,
                          sticky=(constants.W), padx=5, pady=5)
         expense_label.grid(row=1, column=0, columnspan=2)
@@ -71,4 +71,4 @@ class BudgetNewExpenseView:
             constants.E, constants.W), padx=80, pady=5)
         self._income_amount_entry.grid(row=6, column=0, sticky=(
             constants.E, constants.W), padx=80, pady=5)
-        self._frame.grid_columnconfigure(0, weight=1, minsize=400)
+        self._frame.grid_columnconfigure(0, weight=1, minsize=500)
