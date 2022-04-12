@@ -10,15 +10,33 @@ Käyttäjät voivat sovelluksella budjetoida omia kulujaan. Sovelluksessa jokain
 #### Arkkitehtuuri
 [arkkitehtuuri.md](https://github.com/sannituomisto/ot-harjoitustyo/blob/master/budget-app/dokumentaatio/arkkitehtuuri.md)
 ## Asennus
-1. Asenna riippuvuudet komennolla:
+1. Riippuvuudet asennetaan komennolla:
 ```bash
 poetry install
 ```
-2. Suorita vaadittavat alustustoimenpiteet komennolla:
+2. Aloitustoimenpiteet suoritetaan komennolla:
 ```bash
 poetry run invoke build
 ```
-3. Käynnistä sovellus komennolla:
+3. Sovellus käynnistetään komennolla:
 ```bash
 poetry run invoke start
+```
+## Testaus
+Testit suoritetaan komennolla:
+
+```bash
+poetry run invoke test
+```
+## Testikattavuus
+Testikattavuusraportin saa komennolla:
+```bash
+poetry run invoke coverage-report
+```
+Testikattavuusraportin löytää htmlcov-hakemistosta index.html-tiedostosta.
+
+## Pylint-tarkistukset
+Pylint-tarkistukset suoritetaan komennolla:
+```bash
+poetry run invoke lint
 ```
