@@ -7,3 +7,6 @@
 | 5.4. | 14    | käyttäjän-luontiin liittyvien asioiden toteutus, sql-yhteys |
 | 6.4. | 7    | ensimmäiset testit toimii, sql-yhteys, käyttöliittymä login ja create user toteutusta |
 | 8.4. | 5    | käyttöliittymä login ja create user toteutusta |
+| 10.4. | 2    | käyttöliittymä login ja create user toteutusta |
+| 11.4. | 2    | käyttöliittymä budget startview ja budget newexpenseview toteutusta |
+| 12.4. | 5    | käyttöliittymä budget startview ja budget newexpenseview toteutusta, pylint |
