@@ -6,14 +6,14 @@ seurata omia tulojaan ja menojaan.
 Sovelluksella on yksi käyttäjärooli, joka on ns. normaali käyttäjä. Normaali käyttäjä luodaan, kun sovellukseen rekistöröidytään.
 ## Toiminnallisuudet
 ### Ennen kirjautumista
-- Käyttäjä luo käyttäjätunnuksen 
-  - Käyttäjätunnuksen tulee olla vähintään 2 merkkiä
-  - Ei voi olla kahta samaa käyttäjätunnusta
-- Käyttäjä luo käyttäjätunnukselleen salasanan
-  - Salasanan tulee olla vähintään 4 merkkiä
-  - Salasanan tulee sisältää numeroita
-- Käyttäjä kirjautuu sovellukseen luomallaan käyttäjätunnuksella ja salasanalla kirjautumisikkunassa
-  - Järjestelmä ilmoittaa virheestä, jos käyttäjän syöttämää käyttäjätunnusta ei löydy tai annettu salasana ei ole oikein
+- Käyttäjä luo käyttäjätunnuksen ***tehty***
+  - Käyttäjätunnuksen tulee olla vähintään 2 merkkiä ***tehty***
+  - Ei voi olla kahta samaa käyttäjätunnusta ***tehty***
+- Käyttäjä luo käyttäjätunnukselleen salasanan ***tehty***
+  - Salasanan tulee olla vähintään 4 merkkiä ***tehty***
+  - Salasanan tulee sisältää numeroita ***tehty***
+- Käyttäjä kirjautuu sovellukseen luomallaan käyttäjätunnuksella ja salasanalla kirjautumisikkunassa ***tehty***
+  - Järjestelmä ilmoittaa virheestä, jos käyttäjän syöttämää käyttäjätunnusta ei löydy tai annettu salasana ei ole oikein ***tehty***
 ### Kirjautumisen jälkeen
 - Käyttäjä voi kirjata omat tulot
 - Käyttäjä voi kirjata omat menot
