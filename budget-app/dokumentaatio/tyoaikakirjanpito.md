@@ -10,3 +10,4 @@
 | 10.4. | 2    | käyttöliittymä login ja create user toteutusta |
 | 11.4. | 2    | käyttöliittymä budget startview ja budget newexpenseview toteutusta |
 | 12.4. | 5    | käyttöliittymä budget startview ja budget newexpenseview toteutusta, pylint |
+| yht   | 40.5   |  
