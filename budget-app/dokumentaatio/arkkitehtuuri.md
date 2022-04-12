@@ -2,5 +2,5 @@
 
 ## Rakenne
 
-![rakenne](./kuvat/rakenne.png)
+![rakenne](./pictures/rakenne.png)
 
