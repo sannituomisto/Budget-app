@@ -2,6 +2,6 @@
 .pytest_cache
 htmlcov
 data/database.sqlite
-data/test-database.sqlite
+data/t-database.sqlite
 __pycache__
 
