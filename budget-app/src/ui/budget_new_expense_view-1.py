@@ -1,6 +1,6 @@
 from tkinter import Tk, ttk, constants, StringVar, PhotoImage
 
-class BudgetNewExpenseView:
+class BudgetStartView:
     def __init__(self, root):
         self._root = root
         self._frame=None
@@ -30,7 +30,7 @@ class BudgetNewExpenseView:
         plus_button = ttk.Button(master=self._frame, image=self._dwnd, style="plus/minus_button.TButton")
         minus_button = ttk.Button(master=self._frame, image=self._dwnd2, style="plus/minus_button.TButton")
         home_button = ttk.Button(master=self._frame, image=self._dwnd3, style="plus/minus_button.TButton")
-        label = ttk.Label(master=self._root, text="Budget-app")
+        label = ttk.Label(master=self._frame, text="Budget-app")
         expense_label = ttk.Label(master=self._frame, text="New expense")
         euro_label = ttk.Label(master=self._frame, text="€")
         euro_label2 = ttk.Label(master=self._frame, text="€")
@@ -59,4 +59,4 @@ class BudgetNewExpenseView:
         income_amount_label.grid(row=6, column=0, sticky=constants.W, padx=5, pady=5)
         self._expense_amount_entry.grid(row=3, column=0, sticky=(constants.E, constants.W), padx=80, pady=5)
         self._income_amount_entry.grid(row=6, column=0, sticky=(constants.E, constants.W), padx=80, pady=5)
-        self._root.grid_columnconfigure(0, weight=1, minsize=400)
+        self._frame.grid_columnconfigure(0, weight=1, minsize=400)
