@@ -7,6 +7,8 @@ Käyttäjät voivat sovelluksella budjetoida omia kulujaan. Sovelluksessa jokain
 [tyoaikakirjanpito.md](https://github.com/sannituomisto/ot-harjoitustyo/blob/master/budget-app/dokumentaatio/tyoaikakirjanpito.md)
 #### Changelog
 [changelog.md](https://github.com/sannituomisto/ot-harjoitustyo/blob/master/budget-app/dokumentaatio/changelog.md)
+#### Arkkitehtuuri
+[arkkitehtuuri.md](https://github.com/sannituomisto/ot-harjoitustyo/blob/master/budget-app/dokumentaatio/arkkitehtuuri.md)
 ## Asennus
 1. Asenna riippuvuudet komennolla:
 ```bash
