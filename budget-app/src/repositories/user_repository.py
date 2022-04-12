@@ -4,11 +4,12 @@ from database_connection import get_database_connection
 
 class UserRepository:
     def __init__(self, connection):
-        self._connection=connection
+        self._connection = connection
 
     def create(self, user):
         cursor = self._connection.cursor()
-        cursor.execute("INSERT into Users (username, password) VALUES (?, ?)",[user.username, user.password])
+        cursor.execute("INSERT into Users (username, password) VALUES (?, ?)", [
+                       user.username, user.password])
         self._connection.commit()
         return "User created successfully"
 
@@ -25,14 +26,15 @@ class UserRepository:
         cursor = self._connection.cursor()
         cursor.execute("SELECT * FROM Users")
         rows = cursor.fetchall()
-        list=[]
+        list = []
         for i in rows:
-            list.append((i['username'],i['password']))
+            list.append((i['username'], i['password']))
         return list
-        
+
     def delete_all(self):
         cursor = self._connection.cursor()
         cursor.execute("DELETE FROM Users")
         self._connection.commit()
+
 
 user_repository = UserRepository(get_database_connection())

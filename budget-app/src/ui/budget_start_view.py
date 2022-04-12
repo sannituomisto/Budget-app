@@ -1,28 +1,25 @@
-#from tkinter import Tk, ttk, constants, StringVar
+from tkinter import Tk, ttk, constants, StringVar
 
-#class BudgetStartView:
-    #def __init__(self, root):
-        #self._root = root
-        #self._frame = None
-        #self._categories = ('Food', 'Bills', 'Transportation',
-                        #'Clothes/accessories', 'Eating out', 'Entertainment', 'Sports', 
-                        #'Communication','House', 'Toiletry', 'Cosmetics', 'Other')
-        #self._view()
+class BudgetStartView:
+    def __init__(self, root, handle_new_expense):
+        self._root = root
+        self._frame = None
+        self._handle_new_expense= handle_new_expense
+        self._view()
 
-    #def pack(self):
-        #self._frame.pack(fill=constants.X)
+    def pack(self):
+        self._frame.pack(fill=constants.X)
 
-    #def destroy(self):
-        #self._frame.destroy()
+    def destroy(self):
+        self._frame.destroy()
 
+    def _view(self):
+        self._frame = ttk.Frame(master=self._root)
+        new_expense_button = ttk.Button(
+            master=self._frame, text="Enter new expense or income", command=self._handle_new_expense)
 
-    #def _view(self):
-        #self._frame = ttk.Frame(master=self._root)
-        #self._option_var = StringVar(self._frame)
-        #optionmenu_label=ttk.Label(master=self._frame, text="Select category: ")
-        #option_menu = ttk.OptionMenu(self._frame, self._option_var, self._categories[0],*self._categories)
+        new_expense_button.grid(row=0, columnspan=2, sticky=(
+            constants.E, constants.W), padx=70, pady=5)
 
-        #option_menu.grid(column=1, row=0, sticky=constants.W, padx=5, pady=5)
-        #optionmenu_label.grid(row=0, column=0, sticky=constants.W, padx=5, pady=5)
-
-        #self._frame.grid_columnconfigure(0, weight=1, minsize=400)
+        
+        self._frame.grid_columnconfigure(0, weight=1, minsize=400)
