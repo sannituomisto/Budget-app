@@ -4,6 +4,7 @@ from database_connection import get_database_connection
 def drop_tables(connection):
     cursor = connection.cursor()
     cursor.execute("DROP TABLE IF EXISTS Users;")
+    cursor.execute("DROP TABLE IF EXISTS Expense")
     connection.commit()
 
 
@@ -11,6 +12,8 @@ def create_tables(connection):
     cursor = connection.cursor()
     cursor.execute(
         "CREATE TABLE Users (username TEXT PRIMARY KEY,password TEXT);")
+    cursor.execute(
+        "CREATE TABLE Expense(id INTEGER PRIMARY KEY, amount INT, category TEXT, username TEXT)")
     connection.commit()
 
 

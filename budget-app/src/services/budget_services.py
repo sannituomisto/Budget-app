@@ -1,6 +1,8 @@
 from entities.user import User
+from entities.expense import Expense
 from repositories.user_repository import (
     user_repository as default_user_repository)
+from repositories.budget_repository import (budget_repository as default_budget_repository)
 
 
 class UsernameError(Exception):
@@ -12,8 +14,9 @@ class InvalidCredentialsError(Exception):
 
 
 class BudgetServices:
-    def __init__(self, user_repository=default_user_repository):
+    def __init__(self, user_repository=default_user_repository, budget_repository=default_budget_repository):
         self._user_repository = user_repository
+        self._budget_repository = budget_repository
 
     def create_user(self, username, password):
         user_existing = self._user_repository.find_by_username(username)
@@ -30,6 +33,10 @@ class BudgetServices:
                 'The username or password is incorrect')
         self._user = user
         return user
+
+    def create_expense(self, amount, category, username):
+        expense=self._budget_repository.create(Expense(amount,category,username))
+        return expense
 
 
 budget_services = BudgetServices()
