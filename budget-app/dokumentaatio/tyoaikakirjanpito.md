@@ -11,4 +11,6 @@
 | 11.4. | 2    | käyttöliittymä budget startview ja budget newexpenseview toteutusta |
 | 12.4. | 5    | käyttöliittymä budget startview ja budget newexpenseview toteutusta, pylint |
 | 13.4. | 2    | tietokantayhteys budget-repositorioon, budget-repositorio testit |
-| yht   | 40.5   |  
+| 14.4. | 2    | new expense ui toimintojen luominen |
+| 15.4. | 2    | new income ui toimintojen luominen |
+| yht   | 46.5   |  
