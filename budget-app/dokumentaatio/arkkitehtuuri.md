@@ -5,3 +5,12 @@ Ui sisältää tiedostot, jossa ovat kirjautumissivu, uuden käyttäjän luontii
 
 ![rakenne](./pictures/rakenne.png)
 
+## Toimintalogiikka
+
+### Luodaan uusi käyttäjä
+Sovellus toimii alla olevan sekvenssikaavion mukaan, kun uuden käyttäjän luomisikkunassa syötetään oikeanlainen käyttäjätunnus ja salasana.
+
+![create_user_sek](./pictures/create_user_sek.png)
+
+CREATE USER-nappi kutsuu create_user metodia ja parametreiksi käyttäjän syöttämät tiedot. UserRepositoryn avulla selvitetään onko käyttäjänimi käytössä ja jos ei ole, luodaan käyttäjä User-oliona ja tallettaa sen tietokantaan UserReporitoryn metodilla create. Seuraavaksi käyttöliittymä vaihtaa näkymäksi kirjautumisikkunan ja käyttäjä voi kirjautua sovellukseen luomallaan käyttäjätunnuksella ja salasanalla.
+
