@@ -50,7 +50,7 @@ class LoginView:
         password_label = ttk.Label(master=self._frame, text="Password")
         self._password_entry = ttk.Entry(master=self._frame)
         login_button = ttk.Button(
-            master=self._frame, text="Log in", command=self._loggin_in_handler)
+            master=self._frame, text="LOG IN", command=self._loggin_in_handler)
         not_user_label = ttk.Label(
             master=self._frame, text="Don't have a user?")
         create_create_button = ttk.Button(
