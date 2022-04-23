@@ -13,4 +13,5 @@
 | 13.4. | 2    | tietokantayhteys budget-repositorioon, budget-repositorio testit |
 | 14.4. | 2    | new expense ui toimintojen luominen |
 | 15.4. | 2    | new income ui toimintojen luominen |
-| yht   | 46.5   |  
+| 23.4. | 4    | income testit, expense testit, pylint tarkistusten läpikäynti |
+| yht   | 50.5   |  
