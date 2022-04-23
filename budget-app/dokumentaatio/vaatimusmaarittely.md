@@ -15,9 +15,9 @@ Sovelluksella on yksi käyttäjärooli, joka on ns. normaali käyttäjä. Normaa
 - Käyttäjä kirjautuu sovellukseen luomallaan käyttäjätunnuksella ja salasanalla kirjautumisikkunassa ***tehty***
   - Järjestelmä ilmoittaa virheestä, jos käyttäjän syöttämää käyttäjätunnusta ei löydy tai annettu salasana ei ole oikein ***tehty***
 ### Kirjautumisen jälkeen
-- Käyttäjä voi kirjata omat tulot
-- Käyttäjä voi kirjata omat menot
-- Käyttäjä voi lajitella tulot ja menot omiin kategorioihinsa
+- Käyttäjä voi kirjata omat tulot ***tehty***
+- Käyttäjä voi kirjata omat menot ***tehty***
+- Käyttäjä voi lajitella menot omiin kategorioihinsa ***tehty***
 - Käyttäjä näkee yhteenvedon tuloista ja menoista
 - Käyttäjä voi kirjautua ulos sovelluksesta
 ## Kehitysideat
