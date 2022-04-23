@@ -5,6 +5,7 @@ def drop_tables(connection):
     cursor = connection.cursor()
     cursor.execute("DROP TABLE IF EXISTS Users;")
     cursor.execute("DROP TABLE IF EXISTS Expense")
+    cursor.execute("DROP TABLE IF EXISTS Income")
     connection.commit()
 
 
@@ -14,6 +15,8 @@ def create_tables(connection):
         "CREATE TABLE Users (username TEXT PRIMARY KEY,password TEXT);")
     cursor.execute(
         "CREATE TABLE Expense(id INTEGER PRIMARY KEY, amount INT, category TEXT, username TEXT)")
+    cursor.execute(
+        "CREATE TABLE Income(id INTEGER PRIMARY KEY, amount INT, username TEXT)")
     connection.commit()
 
 

@@ -34,7 +34,7 @@ class UI:
 
     def _show_new_expense(self):
         self._hide_current_view()
-        self._current_view = BudgetNewExpenseView(self._root, self._handle_budget_start)
+        self._current_view = BudgetNewExpenseView(self._root, self._handle_budget_start, self._handle_new_expense)
         self._current_view.pack()
 
     def _handle_loggin_in(self):

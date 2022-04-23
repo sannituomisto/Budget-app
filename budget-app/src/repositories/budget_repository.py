@@ -4,12 +4,19 @@ class BudgetRepository:
     def __init__(self,connection):
         self._connection = connection
 
-    def create(self, expense):
+    def create_expense(self, expense):
         cursor = self._connection.cursor()
         cursor.execute("INSERT into Expense (amount, category, username) VALUES (?, ?, ?)", [
                        expense.amount, expense.category, expense.username])
         self._connection.commit()
         return "Expense entered successfully"
+
+    def create_income(self, income):
+        cursor = self._connection.cursor()
+        cursor.execute("INSERT into Income (amount, username) VALUES (?, ?)", [
+                       income.amount, income.username])
+        self._connection.commit()
+        return "Income entered successfully"
 
     def find_all_expense(self):
         cursor = self._connection.cursor()
