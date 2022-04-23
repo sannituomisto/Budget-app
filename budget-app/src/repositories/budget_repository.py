@@ -1,7 +1,8 @@
 from database_connection import get_database_connection
 
+
 class BudgetRepository:
-    def __init__(self,connection):
+    def __init__(self, connection):
         self._connection = connection
 
     def create_expense(self, expense):
@@ -18,13 +19,22 @@ class BudgetRepository:
         self._connection.commit()
         return "Income entered successfully"
 
-    def find_all_expense(self):
+    def find_all_expense(self, username):
         cursor = self._connection.cursor()
-        cursor.execute("SELECT * FROM Expense")
+        cursor.execute("SELECT * FROM Expense WHERE username= ?", [username])
         rows = cursor.fetchall()
         list = []
         for i in rows:
             list.append((i['amount'], i['category']))
+        return list
+
+    def find_all_income(self, username):
+        cursor = self._connection.cursor()
+        cursor.execute("SELECT * FROM Income WHERE username= ?", [username])
+        rows = cursor.fetchall()
+        list = []
+        for i in rows:
+            list.append((i['amount']))
         return list
 
     def delete_all_expenses(self):
@@ -32,5 +42,10 @@ class BudgetRepository:
         cursor.execute("DELETE FROM Expense")
         self._connection.commit()
 
+    def delete_all_incomes(self):
+        cursor = self._connection.cursor()
+        cursor.execute("DELETE FROM Income")
+        self._connection.commit()
+
+
 budget_repository = BudgetRepository(get_database_connection())
-        

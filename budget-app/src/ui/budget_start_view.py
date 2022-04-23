@@ -1,10 +1,11 @@
 from tkinter import Tk, ttk, constants, StringVar
 
+
 class BudgetStartView:
     def __init__(self, root, handle_new_expense):
         self._root = root
         self._frame = None
-        self._handle_new_expense= handle_new_expense
+        self._handle_new_expense = handle_new_expense
         self._view()
 
     def pack(self):
@@ -21,5 +22,4 @@ class BudgetStartView:
         new_expense_button.grid(row=0, columnspan=2, sticky=(
             constants.E, constants.W), padx=70, pady=5)
 
-        
         self._frame.grid_columnconfigure(0, weight=1, minsize=400)

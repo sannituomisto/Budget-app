@@ -3,7 +3,8 @@ from entities.user import User
 from entities.expense import Expense
 from repositories.user_repository import (
     user_repository as default_user_repository)
-from repositories.budget_repository import (budget_repository as default_budget_repository)
+from repositories.budget_repository import (
+    budget_repository as default_budget_repository)
 
 
 class UsernameError(Exception):
@@ -40,11 +41,13 @@ class BudgetServices:
         return self._user
 
     def create_expense(self, amount, category, username):
-        expense=self._budget_repository.create_expense(Expense(amount,category,username))
+        expense = self._budget_repository.create_expense(
+            Expense(amount, category, username))
         return expense
 
     def create_income(self, amount, username):
-        income=self._budget_repository.create_income(Income(amount,username))
+        income = self._budget_repository.create_income(
+            Income(amount, username))
         return income
 
 

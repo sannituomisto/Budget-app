@@ -1,4 +1,3 @@
-import os
 import sqlite3
 from config import DB_FILE_PATH
 

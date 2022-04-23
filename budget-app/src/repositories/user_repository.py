@@ -1,6 +1,4 @@
-from entities.user import User
 from database_connection import get_database_connection
-
 
 class UserRepository:
     def __init__(self, connection):
@@ -19,8 +17,7 @@ class UserRepository:
         row = cursor.fetchone()
         if row:
             return (row['username'], row['password'])
-        else:
-            return None
+        return None
 
     def find_all_users(self):
         cursor = self._connection.cursor()

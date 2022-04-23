@@ -19,22 +19,26 @@ class UI:
 
     def _show_logging_in(self):
         self._hide_current_view()
-        self._current_view = LoginView(self._root, self._handle_creating_user, self._handle_budget_start)
+        self._current_view = LoginView(
+            self._root, self._handle_creating_user, self._handle_budget_start)
         self._current_view.pack()
 
     def _show_creating_user(self):
         self._hide_current_view()
-        self._current_view = CreateNewUserView(self._root, self._handle_loggin_in)
+        self._current_view = CreateNewUserView(
+            self._root, self._handle_loggin_in)
         self._current_view.pack()
 
     def _show_budget_start(self):
         self._hide_current_view()
-        self._current_view = BudgetStartView(self._root, self._handle_new_expense)
+        self._current_view = BudgetStartView(
+            self._root, self._handle_new_expense)
         self._current_view.pack()
 
     def _show_new_expense(self):
         self._hide_current_view()
-        self._current_view = BudgetNewExpenseView(self._root, self._handle_budget_start, self._handle_new_expense)
+        self._current_view = BudgetNewExpenseView(
+            self._root, self._handle_budget_start, self._handle_new_expense)
         self._current_view.pack()
 
     def _handle_loggin_in(self):

@@ -7,8 +7,8 @@ class BudgetNewExpenseView:
     def __init__(self, root, handle_budget_start, handle_new_expense):
         self._root = root
         self._frame = None
-        self._handle_budget_start=handle_budget_start
-        self._handle_new_expense=handle_new_expense
+        self._handle_budget_start = handle_budget_start
+        self._handle_new_expense = handle_new_expense
         self._dwnd3 = PhotoImage(file='home.png')
         self._categories = ('Food', 'Bills', 'Transportation',
                             'Clothes/accessories', 'Eating out', 'Entertainment', 'Sports',
@@ -16,14 +16,13 @@ class BudgetNewExpenseView:
         self._amount_entry = None
         self._expense_amount_entry = None
         self._income_amount_entry = None
-        self._option_menu=None
-        self._variable=None
+        self._option_menu = None
+        self._variable = None
         self._error_var = None
         self._error_label = None
-        self._ok_var=None
-        self._ok_label=None
+        self._ok_var = None
+        self._ok_label = None
         self._user = budget_services.get_current_user()
-        
 
         self._view()
 
@@ -33,7 +32,6 @@ class BudgetNewExpenseView:
     def destroy(self):
         self._frame.destroy()
 
-
     def _show_error(self, errormessage):
         self._error_var.set(errormessage)
         self._error_label.grid()
@@ -42,20 +40,20 @@ class BudgetNewExpenseView:
         self._error_label.grid_remove()
 
     def _creating_new_expense_handler(self):
-        amount=self._expense_amount_entry.get()
-        category=self._get_selected(choice=None)
-        if len(amount)==0:
+        amount = self._expense_amount_entry.get()
+        category = self._get_selected(choice=None)
+        if len(amount) == 0:
             self._show_error('Please enter amount')
             return
-        budget_services.create_expense(amount,category,self._user[0])
+        budget_services.create_expense(amount, category, self._user[0])
         self._handle_new_expense()
 
     def _creating_new_income_handler(self):
-        amount=self._income_amount_entry.get()
-        if len(amount)==0:
+        amount = self._income_amount_entry.get()
+        if len(amount) == 0:
             self._show_error('Please enter amount')
             return
-        budget_services.create_income(amount,self._user[0])
+        budget_services.create_income(amount, self._user[0])
         self._handle_new_expense()
 
     def _get_selected(self, choice):
@@ -68,9 +66,9 @@ class BudgetNewExpenseView:
         s.configure('income.TButton', foreground='green')
         s.configure('expense.TButton', foreground='red')
         income_button = ttk.Button(
-            master=self._frame, text= "Enter", style="income.TButton", command=self._creating_new_income_handler)
+            master=self._frame, text="Enter", style="income.TButton", command=self._creating_new_income_handler)
         expense_button = ttk.Button(
-            master=self._frame, text="Enter",style="expense.TButton", command=self._creating_new_expense_handler)
+            master=self._frame, text="Enter", style="expense.TButton", command=self._creating_new_expense_handler)
         home_button = ttk.Button(
             master=self._frame, image=self._dwnd3, command=self._handle_budget_start)
         label = ttk.Label(master=self._frame, text="Budget-app", font='bold')
@@ -88,7 +86,6 @@ class BudgetNewExpenseView:
         spacer1 = ttk.Label(master=self._frame, text="")
         spacer2 = ttk.Label(master=self._frame, text="")
         spacer3 = ttk.Label(master=self._frame, text="")
-
 
         self._variable = StringVar(self._frame)
         self._variable.set(self._categories[3])
@@ -127,4 +124,3 @@ class BudgetNewExpenseView:
 
         self._frame.grid_columnconfigure(0, weight=1, minsize=500)
         self._hide_error()
-
