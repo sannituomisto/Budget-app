@@ -23,19 +23,19 @@ class BudgetRepository:
         cursor = self._connection.cursor()
         cursor.execute("SELECT * FROM Expense WHERE username= ?", [username])
         rows = cursor.fetchall()
-        list = []
+        list_ = []
         for i in rows:
-            list.append((i['amount'], i['category']))
-        return list
+            list_.append((i['amount'], i['category']))
+        return list_
 
     def find_all_income(self, username):
         cursor = self._connection.cursor()
         cursor.execute("SELECT * FROM Income WHERE username= ?", [username])
         rows = cursor.fetchall()
-        list = []
+        list_ = []
         for i in rows:
-            list.append((i['amount']))
-        return list
+            list_.append((i['amount']))
+        return list_
 
     def delete_all_expenses(self):
         cursor = self._connection.cursor()

@@ -23,10 +23,10 @@ class UserRepository:
         cursor = self._connection.cursor()
         cursor.execute("SELECT * FROM Users")
         rows = cursor.fetchall()
-        list = []
+        list_ = []
         for i in rows:
-            list.append((i['username'], i['password']))
-        return list
+            list_.append((i['username'], i['password']))
+        return list_
 
     def delete_all_users(self):
         cursor = self._connection.cursor()
