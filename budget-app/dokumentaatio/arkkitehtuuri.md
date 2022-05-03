@@ -8,9 +8,29 @@ Ui sisältää tiedostot, jossa ovat kirjautumissivu, uuden käyttäjän luontii
 ## Sovelluslogiikka
 Sovelluksen luokka User kuvaa käyttäjiä, Expense menoja ja Income tuloja. Nämä luokat kertovat, mitä tietoja sovelluksessa tallennetaan tietokantaan. Sovelluksen tietomalli näyttää siis seuraavalta:
 
-Itse sovelluksen toiminnot ovat `BudgetServices`-luokassa, jossa on eri metodit jokaiselle toiminnolle. UserRepository ja BudgetRepository vastaavat tietojen tallentamisesta tietokantaan niiden omiin alustettuihin tietokantatauluihin. `BudgetServices` taas saa käyttäjiin sekä tuloihin ja menoihin liittyvät tiedot UserRepositoryn ja BudgetRepositoryn avulla.
+![tietomalli_sek](./pictures/tietomalli.png)
+
+
+Itse sovelluksen toiminnot ovat `BudgetServices`-luokassa, jossa on eri metodit jokaiselle toiminnolle. Nämä toiminnot ovat:
+- `create_user`
+- `login`
+- `get_current_user`
+- `create_expense`
+- `create_income`
+- `log_out`
+
+
+UserRepository ja BudgetRepository vastaavat tietojen tallentamisesta tietokantaan niiden omiin alustettuihin tietokantatauluihin. `BudgetServices` taas saa käyttäjiin sekä tuloihin ja menoihin liittyvät tiedot UserRepositoryn ja BudgetRepositoryn avulla.
 Sovelluksen eri osien suhdetta voidaan kuvata seuraavalla pakkauskaaviolla:
 
+![pakkauskaavio_sek](./pictures/pakkauskaavio.png)
+
+## Käyttöliittymä
+Sovelluksessa on neljä näkymää:
+1. Sisäänkirjautumisnäkymä
+2. Uuden käyttäjän luomisnäkymä
+3. Sovelluksen aoitus- eli kotinäkymä
+4. Uusien tulojen ja menojen kirjaamisnäkymä
 
 ## Toimintalogiikka
 
