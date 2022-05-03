@@ -1,7 +1,7 @@
 
 from tkinter import Tk, ttk, constants, StringVar, PhotoImage
+import string
 from services.budget_services import budget_services
-
 
 class BudgetNewExpenseView:
     def __init__(self, root, handle_budget_start, handle_new_expense):
@@ -42,6 +42,8 @@ class BudgetNewExpenseView:
     def _creating_new_expense_handler(self):
         amount = self._expense_amount_entry.get()
         category = self._get_selected(choice=None)
+        notallowed=string.punctuation+string.ascii_letters
+        notallowed=notallowed.replace(".","")
         if len(amount) == 0:
             self._show_error('Please enter amount')
             return
@@ -71,7 +73,6 @@ class BudgetNewExpenseView:
             master=self._frame, text="Enter", style="expense.TButton", command=self._creating_new_expense_handler)
         home_button = ttk.Button(
             master=self._frame, image=self._dwnd3, command=self._handle_budget_start)
-        label = ttk.Label(master=self._frame, text="Budget-app", font='bold')
         expense_label = ttk.Label(master=self._frame, text="New expense")
         euro_label = ttk.Label(master=self._frame, text="€")
         euro_label2 = ttk.Label(master=self._frame, text="€")
@@ -85,7 +86,7 @@ class BudgetNewExpenseView:
             master=self._frame, textvariable=self._error_var, foreground='red')
         spacer1 = ttk.Label(master=self._frame, text="")
         spacer2 = ttk.Label(master=self._frame, text="")
-        spacer3 = ttk.Label(master=self._frame, text="")
+
 
         self._variable = StringVar(self._frame)
         self._variable.set(self._categories[3])
@@ -93,9 +94,7 @@ class BudgetNewExpenseView:
             master=self._frame, text="Select category: ")
         option_menu = ttk.OptionMenu(
             self._frame, self._variable,  self._categories[0], *self._categories, command=self._get_selected)
-
-        label.grid(row=0, column=0, columnspan=2)
-        euro_label.grid(row=4, column=0, sticky=(constants.E), padx=60, pady=5)
+        euro_label.grid(row=4,  sticky=(constants.E), padx=60, pady=5)
         euro_label2.grid(row=9, column=0, sticky=(
             constants.E), padx=60, pady=5)
         income_button.grid(row=10, columnspan=2, sticky=(
@@ -104,7 +103,7 @@ class BudgetNewExpenseView:
             constants.E, constants.W), padx=200, pady=5)
         home_button.grid(row=0, column=0, columnspan=1,
                          sticky=(constants.W), padx=5, pady=5)
-        expense_label.grid(row=2, column=0, columnspan=2)
+        expense_label.grid(row=1, column=0, columnspan=2, pady=3)
         income_label.grid(row=8, column=0, columnspan=2)
         self._error_label.grid(row=11, padx=5, pady=5)
         option_menu.grid(column=0, row=3, sticky=constants.W, padx=130, pady=5)
@@ -120,7 +119,7 @@ class BudgetNewExpenseView:
             constants.E, constants.W), padx=80, pady=5)
         spacer1.grid(row=6, column=0)
         spacer2.grid(row=7, column=0)
-        spacer3.grid(row=1, column=0)
+
 
         self._frame.grid_columnconfigure(0, weight=1, minsize=500)
         self._hide_error()
