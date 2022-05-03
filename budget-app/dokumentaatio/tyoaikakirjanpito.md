@@ -14,4 +14,6 @@
 | 14.4. | 2    | new expense ui toimintojen luominen |
 | 15.4. | 2    | new income ui toimintojen luominen |
 | 23.4. | 4    | income testit, expense testit, pylint tarkistusten läpikäynti |
-| yht   | 50.5   |  
+| 2.5. | 3    | käyttöliittymän kotinäkymän toteutusta |
+| 23.4. | 8    | käyttöliittymän kotinäkymän toteutusta, dokumentaatio|
+| yht   | 61.5   |  
