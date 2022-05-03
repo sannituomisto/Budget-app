@@ -17,22 +17,28 @@ poetry run invoke start
 ## Sovellukseen kirjautuminen
 Sisäänkirjautuminen tapahtuu alla olevassa näkymässä:
 
-![login.png](./pictures/kayttoohje-kirjautuminen.png)
+![login.png](./pictures/login.png)
 
 Voit kirjautua sisään sovellukseen omalla käyttäjätunnuksella ja salasanalla. Syötä käyttäjätunnus ja salasana omiin syötekenttiinsä ja paina _LOG IN_- painiketta. Jos sinulla ei ole vielä käyttäjää, voit luoda sen painamalla _Create a new user_-painiketta, jolloin siirryt käyttäjän luomisnäkymään.
 
 ## Uuden käyttäjän luominen
 Uuden käyttäjän luominen tapahtuu alla olevassa näkymässä:
 
+![uusi_kayttaja.png](./pictures/uusi_kayttaja.png)
+
 Voit luoda uuden käyttäjän keksimällä itsellesi käyttäjätunnuksen ja salasanan ja kirjaittamalla ne omiin syötekenttiinsä. Painamalla _CREATE USER_- painiketta uusi käyttäjä luodaan ja siirryt auytomaattisesti takaisin kirjautumissivulle, jossa voi kirjautua sisään aikaisemman ohjeen mukaan.
 
 ## Kotinäkymän toiminnot
 Voit siirtyä kirjaamaan tuloja ja menoja sekä kirjautua ulos alla olevassa näkymässä:
 
+![koti.png](./pictures/koti.png)
+
 Painamalla _Eneter new expense or income_- painiketta pääset kirjaamaan tuloja ja menoja. Painamalla _LOG OUT_- painiketta voit kirjautua ulos sovelluksesta.
 
 ## Tulojen ja menojen kirjaaminen
 Tulojen ja menojen kirjaaminen tapahtuu alla olevassa näkymässä:
+
+![uusi_kulu_meno.png](./pictures/uusi_kulu_meno.png)
 
 Voit kirjata uusia menoja _New expense_- otsikon alla. Valitse ensin valikosta sopiva kategoria ja kirjoita syötekenttään menon määrä. Sen jälkeen paina punaista _Enter_- painiketta. 
 
