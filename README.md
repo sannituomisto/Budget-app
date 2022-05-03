@@ -10,8 +10,8 @@ Käyttäjät voivat sovelluksella budjetoida omia kulujaan. Sovelluksessa jokain
 #### Arkkitehtuuri
 [arkkitehtuuri.md](https://github.com/sannituomisto/ot-harjoitustyo/blob/master/budget-app/dokumentaatio/arkkitehtuuri.md)
 #### Releases
-[viikko5 release](https://github.com/sannituomisto/ot-harjoitustyo/releases/tag/viikko5)
-[viikko6 release](https://github.com/sannituomisto/ot-harjoitustyo/releases/tag/viikko6)
+- [viikko5 release](https://github.com/sannituomisto/ot-harjoitustyo/releases/tag/viikko5)
+- [viikko6 release](https://github.com/sannituomisto/ot-harjoitustyo/releases/tag/viikko6)
 
 ## Asennus
 1. Riippuvuudet asennetaan komennolla:
