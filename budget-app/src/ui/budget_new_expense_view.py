@@ -3,6 +3,7 @@ from tkinter import Tk, ttk, constants, StringVar, PhotoImage
 import string
 from services.budget_services import budget_services
 
+
 class BudgetNewExpenseView:
     def __init__(self, root, handle_budget_start, handle_new_expense):
         self._root = root
@@ -42,8 +43,8 @@ class BudgetNewExpenseView:
     def _creating_new_expense_handler(self):
         amount = self._expense_amount_entry.get()
         category = self._get_selected(choice=None)
-        notallowed=string.punctuation+string.ascii_letters
-        notallowed=notallowed.replace(".","")
+        notallowed = string.punctuation+string.ascii_letters
+        notallowed = notallowed.replace(".", "")
         if len(amount) == 0:
             self._show_error('Please enter amount')
             return
@@ -87,7 +88,6 @@ class BudgetNewExpenseView:
         spacer1 = ttk.Label(master=self._frame, text="")
         spacer2 = ttk.Label(master=self._frame, text="")
 
-
         self._variable = StringVar(self._frame)
         self._variable.set(self._categories[3])
         optionmenu_label = ttk.Label(
@@ -119,7 +119,6 @@ class BudgetNewExpenseView:
             constants.E, constants.W), padx=80, pady=5)
         spacer1.grid(row=6, column=0)
         spacer2.grid(row=7, column=0)
-
 
         self._frame.grid_columnconfigure(0, weight=1, minsize=500)
         self._hide_error()

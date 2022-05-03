@@ -11,8 +11,8 @@ class BudgetStartView:
         self._handle_new_expense = handle_new_expense
         self._handle_log_out = handle_log_out
         self._user = budget_services.get_current_user()
-        self._income_sum=budget_repository.incomes_sum(self._user[0])
-        self._expense_sum=budget_repository.expense_sum(self._user[0])
+        self._income_sum = budget_repository.incomes_sum(self._user[0])
+        self._expense_sum = budget_repository.expense_sum(self._user[0])
         self._view()
 
     def pack(self):
@@ -25,7 +25,6 @@ class BudgetStartView:
         budget_services.log_out()
         self._handle_log_out()
 
-
     def _view(self):
         self._frame = ttk.Frame(master=self._root)
         label = ttk.Label(master=self._frame, text="Budget-app", font='bold')
@@ -33,21 +32,24 @@ class BudgetStartView:
             master=self._frame, text="Enter new expense or income", command=self._handle_new_expense)
         log_out_button = ttk.Button(
             master=self._frame, text="LOG OUT", command=self._handle_log_out)
-        incomes=budget_repository.find_all_income(self._user[0])
-        expenses=budget_repository.find_all_expense(self._user[0])
-        balance_label=ttk.Label(master=self._frame, text=f"Balance: {self._income_sum-self._expense_sum} €")
-        expenses_label=ttk.Label(master=self._frame, text=f"Expenses")
-        incomes_label=ttk.Label(master=self._frame, text=f"Incomes")
-        expenses_sum_label=ttk.Label(master=self._frame, text=f"{self._expense_sum} €")
-        incomes_sum_label=ttk.Label(master=self._frame, text=f"{self._income_sum} €")
-        expenses_box=Listbox(master=self._frame)
-        incomes_box=Listbox(master=self._frame)
+        incomes = budget_repository.find_all_income(self._user[0])
+        expenses = budget_repository.find_all_expense(self._user[0])
+        balance_label = ttk.Label(
+            master=self._frame, text=f"Balance: {self._income_sum-self._expense_sum} €")
+        expenses_label = ttk.Label(master=self._frame, text=f"Expenses")
+        incomes_label = ttk.Label(master=self._frame, text=f"Incomes")
+        expenses_sum_label = ttk.Label(
+            master=self._frame, text=f"{self._expense_sum} €")
+        incomes_sum_label = ttk.Label(
+            master=self._frame, text=f"{self._income_sum} €")
+        expenses_box = Listbox(master=self._frame)
+        incomes_box = Listbox(master=self._frame)
         for expense in expenses:
             expenses_box.insert(END, expense)
         for income in incomes:
             incomes_box.insert(END, income)
-        scroll=Scrollbar(master=self._frame)
-        scroll2=Scrollbar(master=self._frame)
+        scroll = Scrollbar(master=self._frame)
+        scroll2 = Scrollbar(master=self._frame)
         expenses_box.config(yscrollcommand=scroll.set)
         incomes_box.config(yscrollcommand=scroll2.set)
         scroll.config(command=expenses_box.yview)
@@ -60,23 +62,20 @@ class BudgetStartView:
         expenses_box.grid(row=4, sticky=(
             constants.W), columnspan=2, padx=15, pady=5)
         incomes_box.grid(row=4, sticky=(constants.E),
-            columnspan=2, padx=30, pady=5)
-        scroll.grid(row=4, columnspan=2,sticky=(
-            constants.NS,constants.W), padx=180, pady=5)
-        scroll2.grid(row=4, columnspan=2,sticky=(
-            constants.NS,constants.E), padx=15, pady=5)
-        expenses_label.grid(row=2, column=0, columnspan=2,sticky=(
-            constants.W) ,padx=70)
-        incomes_label.grid(row=2, column=0, columnspan=2,sticky=(
-            constants.E) ,padx=82)
-        balance_label.grid(row=1, column=0, columnspan=2,sticky=(
-            constants.E) ,padx=155, pady=5)
-        expenses_sum_label.grid(row=3, column=0, columnspan=2,sticky=(
-            constants.W) ,padx=80)
-        incomes_sum_label.grid(row=3, column=0, columnspan=2,sticky=(
-            constants.E) ,padx=85)
-        
-
-
+                         columnspan=2, padx=30, pady=5)
+        scroll.grid(row=4, columnspan=2, sticky=(
+            constants.NS, constants.W), padx=180, pady=5)
+        scroll2.grid(row=4, columnspan=2, sticky=(
+            constants.NS, constants.E), padx=15, pady=5)
+        expenses_label.grid(row=2, column=0, columnspan=2, sticky=(
+            constants.W), padx=70)
+        incomes_label.grid(row=2, column=0, columnspan=2, sticky=(
+            constants.E), padx=82)
+        balance_label.grid(row=1, column=0, columnspan=2, sticky=(
+            constants.E), padx=155, pady=5)
+        expenses_sum_label.grid(row=3, column=0, columnspan=2, sticky=(
+            constants.W), padx=80)
+        incomes_sum_label.grid(row=3, column=0, columnspan=2, sticky=(
+            constants.E), padx=85)
 
         self._frame.grid_columnconfigure(0, weight=1, minsize=400)

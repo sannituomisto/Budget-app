@@ -78,8 +78,9 @@ class BudgetRepository:
         Returns:
             Palauttaa summan
         """
-        cursor=self._connection.cursor()
-        cursor.execute("SELECT SUM(amount) FROM Income WHERE username= ?", [username])
+        cursor = self._connection.cursor()
+        cursor.execute(
+            "SELECT SUM(amount) FROM Income WHERE username= ?", [username])
         row = cursor.fetchone()[0]
         return row
 
@@ -89,16 +90,16 @@ class BudgetRepository:
         Returns:
             Palauttaa summan
         """
-        cursor=self._connection.cursor()
-        cursor.execute("SELECT SUM(amount) FROM Expense WHERE username= ?", [username])
+        cursor = self._connection.cursor()
+        cursor.execute(
+            "SELECT SUM(amount) FROM Expense WHERE username= ?", [username])
         row = cursor.fetchone()[0]
         return row
-
 
     def delete_all_expenses(self):
         """Poistaa kaikki kulut
         """
-        
+
         cursor = self._connection.cursor()
         cursor.execute("DELETE FROM Expense")
         self._connection.commit()

@@ -1,6 +1,6 @@
 class Expense:
     """Kuluja kuvaava luokka
-    
+
     Attributes:
         amount: Kulun suuruus lukuarvona
         category: Kulun merkkijonoarvoinen kategoria 
@@ -9,7 +9,7 @@ class Expense:
 
     def __init__(self, amount, category, username):
         """Konstruktori, jolla luodaan uusi kulu
-    
+
         Args:
             amount: Kulun suuruus lukuarvona
             category: Kulun merkkijonoarvoinen kategoria 

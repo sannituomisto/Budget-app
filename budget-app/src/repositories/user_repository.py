@@ -1,5 +1,6 @@
 from database_connection import get_database_connection
 
+
 class UserRepository:
     """Luokka, joka vastaa tietokantaoperaatioista käyttäjiin liittyen"""
 

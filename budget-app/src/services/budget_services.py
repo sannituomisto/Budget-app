@@ -18,7 +18,11 @@ class InvalidCredentialsError(Exception):
 class BudgetServices:
     """Luokka, joka vastaa sovelluslogiikasta"""
 
-    def __init__(self, user_repository=default_user_repository, budget_repository=default_budget_repository):
+    def __init__(
+        self,
+        budget_repository=default_budget_repository,
+        user_repository=default_user_repository
+    ):
         """Luokan konstruktori
 
         Args:
@@ -67,7 +71,7 @@ class BudgetServices:
 
         Returns:
             Käyttäjä User-oliona
-        """ 
+        """
 
         user = self._user_repository.find_by_username(username)
         if not user or user[1] != password:
@@ -117,9 +121,8 @@ class BudgetServices:
 
     def log_out(self):
         """Käyttäjän kirjaaminen ulos sovelluksesta"""
-        
-        self._user = None
 
+        self._user = None
 
 
 budget_services = BudgetServices()
