@@ -80,7 +80,7 @@ class BudgetRepository:
         """
         cursor = self._connection.cursor()
         cursor.execute(
-            "SELECT SUM(amount) FROM Income WHERE username= ?", [username])
+            "SELECT COALESCE(SUM(amount),0) FROM Income WHERE username= ?", [username])
         row = cursor.fetchone()[0]
         return row
 
@@ -92,7 +92,7 @@ class BudgetRepository:
         """
         cursor = self._connection.cursor()
         cursor.execute(
-            "SELECT SUM(amount) FROM Expense WHERE username= ?", [username])
+            "SELECT COALESCE(SUM(amount),0) FROM Expense WHERE username= ?", [username])
         row = cursor.fetchone()[0]
         return row
 
@@ -110,6 +110,12 @@ class BudgetRepository:
 
         cursor = self._connection.cursor()
         cursor.execute("DELETE FROM Income")
+        self._connection.commit()
+
+    def delete_all_from_user(self, username):
+        cursor = self._connection.cursor()
+        cursor.execute("DELETE FROM Expense WHERE username= ?", [username])
+        cursor.execute("DELETE FROM Income WHERE username= ?", [username])
         self._connection.commit()
 
 

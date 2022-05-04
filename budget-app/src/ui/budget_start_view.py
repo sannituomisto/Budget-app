@@ -11,8 +11,11 @@ class BudgetStartView:
         self._handle_new_expense = handle_new_expense
         self._handle_log_out = handle_log_out
         self._user = budget_services.get_current_user()
-        self._income_sum = budget_repository.incomes_sum(self._user[0])
-        self._expense_sum = budget_repository.expense_sum(self._user[0])
+        self._income_sum = budget_services.get_income_sum(self._user[0])
+        self._expense_sum = budget_services.get_expense_sum(self._user[0])
+        self._incomes = budget_services.get_all_incomes(self._user[0])
+        self._expenses = budget_services.get_all_expenses(self._user[0])
+        self._clear=budget_services.delete_all_from_user(self._user[0])
         self._view()
 
     def pack(self):
@@ -31,9 +34,9 @@ class BudgetStartView:
         new_expense_button = ttk.Button(
             master=self._frame, text="Enter new expense or income", command=self._handle_new_expense)
         log_out_button = ttk.Button(
-            master=self._frame, text="LOG OUT", command=self._handle_log_out)
-        incomes = budget_repository.find_all_income(self._user[0])
-        expenses = budget_repository.find_all_expense(self._user[0])
+            master=self._frame, text="LOG OUT", command=self._log_out_handler)
+        clear_button = ttk.Button(
+            master=self._frame, text="Clear your budget", command=self._clear)
         balance_label = ttk.Label(
             master=self._frame, text=f"Balance: {self._income_sum-self._expense_sum} €")
         expenses_label = ttk.Label(master=self._frame, text=f"Expenses")
@@ -44,9 +47,9 @@ class BudgetStartView:
             master=self._frame, text=f"{self._income_sum} €")
         expenses_box = Listbox(master=self._frame)
         incomes_box = Listbox(master=self._frame)
-        for expense in expenses:
+        for expense in self._expenses:
             expenses_box.insert(END, expense)
-        for income in incomes:
+        for income in self._incomes:
             incomes_box.insert(END, income)
         scroll = Scrollbar(master=self._frame)
         scroll2 = Scrollbar(master=self._frame)
@@ -56,6 +59,8 @@ class BudgetStartView:
         scroll2.config(command=expenses_box.yview)
         label.grid(row=0, column=0, columnspan=2)
         new_expense_button.grid(row=5, columnspan=2, sticky=(
+            constants.E, constants.W), padx=70, pady=5)
+        clear_button.grid(row=6, columnspan=2, sticky=(
             constants.E, constants.W), padx=70, pady=5)
         log_out_button.grid(row=0, columnspan=2, sticky=(
             constants.E), padx=10, pady=5)

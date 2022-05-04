@@ -124,5 +124,24 @@ class BudgetServices:
 
         self._user = None
 
+    def get_income_sum(self, username):
+        income_sum=self._budget_repository.incomes_sum(username)
+        return income_sum
+
+    def get_expense_sum(self, username):
+        expense_sum=self._budget_repository.expense_sum(username)
+        return expense_sum
+
+    def get_all_incomes(self, username):
+        all_incomes=self._budget_repository.find_all_income(username)
+        return all_incomes
+
+    def get_all_expenses(self, username):
+        all_expenses=self._budget_repository.find_all_expense(username)
+        return all_expenses
+
+    def delete_all_from_user(self, username):
+        self._budget_repository.delete_all_from_user(username)
+
 
 budget_services = BudgetServices()
