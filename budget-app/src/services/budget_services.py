@@ -132,6 +132,10 @@ class BudgetServices:
         expense_sum=self._budget_repository.expense_sum(username)
         return expense_sum
 
+    def get_expense_sum_by_category(self, username, category):
+        expense_sum_by_category=self._budget_repository.expense_sum_by_category(username, category)
+        return expense_sum_by_category
+
     def get_all_incomes(self, username):
         all_incomes=self._budget_repository.find_all_income(username)
         return all_incomes

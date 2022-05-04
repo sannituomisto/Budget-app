@@ -87,6 +87,8 @@ class BudgetNewExpenseView:
             master=self._frame, textvariable=self._error_var, foreground='red')
         spacer1 = ttk.Label(master=self._frame, text="")
         spacer2 = ttk.Label(master=self._frame, text="")
+        spacer3 = ttk.Label(master=self._frame, text="")
+        spacer4 = ttk.Label(master=self._frame, text="")
 
         self._variable = StringVar(self._frame)
         self._variable.set(self._categories[3])
@@ -94,31 +96,33 @@ class BudgetNewExpenseView:
             master=self._frame, text="Select category: ")
         option_menu = ttk.OptionMenu(
             self._frame, self._variable,  self._categories[0], *self._categories, command=self._get_selected)
-        euro_label.grid(row=4,  sticky=(constants.E), padx=60, pady=5)
+        euro_label.grid(row=4,  sticky=(constants.E), padx=40, pady=5)
         euro_label2.grid(row=9, column=0, sticky=(
-            constants.E), padx=60, pady=5)
+            constants.E), padx=40, pady=5)
         income_button.grid(row=10, columnspan=2, sticky=(
-            constants.E, constants.W), padx=200, pady=5)
+            constants.E, constants.W), padx=200, pady=(5,40))
         expense_button.grid(row=5, columnspan=2, sticky=(
             constants.E, constants.W), padx=200, pady=5)
         home_button.grid(row=0, column=0, columnspan=1,
                          sticky=(constants.W), padx=5, pady=5)
         expense_label.grid(row=1, column=0, columnspan=2, pady=3)
-        income_label.grid(row=8, column=0, columnspan=2)
+        income_label.grid(row=8, column=0, columnspan=2, pady=(0,20))
         self._error_label.grid(row=11, padx=5, pady=5)
-        option_menu.grid(column=0, row=3, sticky=constants.W, padx=130, pady=5)
+        option_menu.grid(column=0, row=3, sticky=constants.W, padx=170, pady=5)
         optionmenu_label.grid(
-            row=3, column=0, sticky=constants.W, padx=5, pady=5)
+            row=3, column=0, sticky=constants.W, padx=40, pady=5)
         expense_amount_label.grid(
-            row=4, column=0, sticky=constants.W, padx=5, pady=5)
+            row=4, column=0, sticky=constants.W, padx=40, pady=5)
         income_amount_label.grid(
-            row=9, column=0, sticky=constants.W, padx=5, pady=5)
+            row=9, column=0, sticky=constants.W, padx=40, pady=5)
         self._expense_amount_entry.grid(row=4, column=0, sticky=(
-            constants.E, constants.W), padx=80, pady=5)
+            constants.E, constants.W), padx=(110,60), pady=5)
         self._income_amount_entry.grid(row=9, column=0, sticky=(
-            constants.E, constants.W), padx=80, pady=5)
+            constants.E, constants.W), padx=(110,60), pady=5)
         spacer1.grid(row=6, column=0)
         spacer2.grid(row=7, column=0)
+        spacer3.grid(row=2, column=0)
+
 
         self._frame.grid_columnconfigure(0, weight=1, minsize=500)
         self._hide_error()

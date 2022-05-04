@@ -5,17 +5,17 @@ from repositories.budget_repository import budget_repository
 
 
 class BudgetStartView:
-    def __init__(self, root, handle_new_expense, handle_log_out):
+    def __init__(self, root, handle_new_expense, handle_log_out, handle_budget_start):
         self._root = root
         self._frame = None
         self._handle_new_expense = handle_new_expense
         self._handle_log_out = handle_log_out
+        self._handle_budget_start=handle_budget_start
         self._user = budget_services.get_current_user()
-        self._income_sum = budget_services.get_income_sum(self._user[0])
-        self._expense_sum = budget_services.get_expense_sum(self._user[0])
-        self._incomes = budget_services.get_all_incomes(self._user[0])
-        self._expenses = budget_services.get_all_expenses(self._user[0])
-        self._clear=budget_services.delete_all_from_user(self._user[0])
+        self._variable = None
+        self._categories = ('Food', 'Bills', 'Transportation',
+                            'Clothes/accessories', 'Eating out', 'Entertainment', 'Sports',
+                            'Communication', 'House', 'Toiletry/cosmetics', 'Other')
         self._view()
 
     def pack(self):
@@ -28,6 +28,32 @@ class BudgetStartView:
         budget_services.log_out()
         self._handle_log_out()
 
+    
+    def _delete_budget_handler(self):
+        budget_services.delete_all_from_user(self._user[0])
+        self._handle_budget_start()
+
+
+    def _expense_sum_handler(self):
+        expense_sum=budget_services.get_expense_sum(self._user[0])
+        return expense_sum
+
+    def _income_sum_handler(self):
+        income_sum=budget_services.get_income_sum(self._user[0])
+        return income_sum
+
+
+    def _all_income_handler(self):
+        all_income=budget_services.get_all_incomes(self._user[0])
+        return all_income
+
+    def _all_expense_handler(self):
+        all_expense=budget_services.get_all_expenses(self._user[0])
+        return all_expense
+
+
+
+  
     def _view(self):
         self._frame = ttk.Frame(master=self._root)
         label = ttk.Label(master=self._frame, text="Budget-app", font='bold')
@@ -36,20 +62,20 @@ class BudgetStartView:
         log_out_button = ttk.Button(
             master=self._frame, text="LOG OUT", command=self._log_out_handler)
         clear_button = ttk.Button(
-            master=self._frame, text="Clear your budget", command=self._clear)
+            master=self._frame, text="Clear your budget", command=self._delete_budget_handler)
         balance_label = ttk.Label(
-            master=self._frame, text=f"Balance: {self._income_sum-self._expense_sum} €")
+            master=self._frame, text=f"Balance: {self._income_sum_handler()-self._expense_sum_handler()} €")
         expenses_label = ttk.Label(master=self._frame, text=f"Expenses")
         incomes_label = ttk.Label(master=self._frame, text=f"Incomes")
         expenses_sum_label = ttk.Label(
-            master=self._frame, text=f"{self._expense_sum} €")
+            master=self._frame, text=f"{self._expense_sum_handler()} €")
         incomes_sum_label = ttk.Label(
-            master=self._frame, text=f"{self._income_sum} €")
+            master=self._frame, text=f"{self._income_sum_handler()} €")
         expenses_box = Listbox(master=self._frame)
         incomes_box = Listbox(master=self._frame)
-        for expense in self._expenses:
+        for expense in self._all_expense_handler():
             expenses_box.insert(END, expense)
-        for income in self._incomes:
+        for income in self._all_income_handler():
             incomes_box.insert(END, income)
         scroll = Scrollbar(master=self._frame)
         scroll2 = Scrollbar(master=self._frame)
@@ -57,6 +83,7 @@ class BudgetStartView:
         incomes_box.config(yscrollcommand=scroll2.set)
         scroll.config(command=expenses_box.yview)
         scroll2.config(command=expenses_box.yview)
+
         label.grid(row=0, column=0, columnspan=2)
         new_expense_button.grid(row=5, columnspan=2, sticky=(
             constants.E, constants.W), padx=70, pady=5)

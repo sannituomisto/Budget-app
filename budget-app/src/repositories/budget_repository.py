@@ -96,6 +96,21 @@ class BudgetRepository:
         row = cursor.fetchone()[0]
         return row
 
+    def expense_sum_by_category(self, username, category):
+        """Hakee saman kategorian kulujen yhteenlasketun summan
+
+        Returns:
+            Palauttaa summan
+        """
+        cursor = self._connection.cursor()
+        print(username)
+        print(category)
+        cursor.execute(
+            "SELECT COALESCE(SUM(amount),0) FROM Expense WHERE username= ? AND category= ?", [username, category])
+        row = cursor.fetchone()[0]
+        print(row)
+        return row
+
     def delete_all_expenses(self):
         """Poistaa kaikki kulut
         """
@@ -117,6 +132,7 @@ class BudgetRepository:
         cursor.execute("DELETE FROM Expense WHERE username= ?", [username])
         cursor.execute("DELETE FROM Income WHERE username= ?", [username])
         self._connection.commit()
+        return "Expenses and incomes deleted"
 
 
 budget_repository = BudgetRepository(get_database_connection())
