@@ -14,3 +14,6 @@
 
 ## Testikattavuus
 
+![coverage_report.png](./pictures/coverage_report.png)
+
+Testikattavuus on 86%
