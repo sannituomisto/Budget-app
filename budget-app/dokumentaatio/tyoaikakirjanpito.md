@@ -16,4 +16,5 @@
 | 23.4. | 4    | income testit, expense testit, pylint tarkistusten läpikäynti |
 | 2.5. | 3    | käyttöliittymän kotinäkymän toteutusta |
 | 23.4. | 8    | käyttöliittymän kotinäkymän toteutusta, dokumentaatio|
-| yht   | 61.5   |  
+| 15.5. | 9    | käyttöliittymän kotinäkymän toteutusta, testit, pylint, dokumentaatio|
+| yht   | 70.5   |  
