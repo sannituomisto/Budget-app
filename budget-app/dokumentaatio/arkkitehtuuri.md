@@ -32,6 +32,12 @@ Sovelluksessa on neljä näkymää:
 3. Sovelluksen aoitus- eli kotinäkymä
 4. Uusien tulojen ja menojen kirjaamisnäkymä
 
+## Tietojen tallennus
+Sovelluksessa talletetaan
+- käyttäjien tiedot (käyttäjätunnus,salasana) talletetaan SQLite- tietokantatauluun `Users`
+- kulujen tiedot (määrä, kategoria, käyttäjätunnus) talletetaan SQLite- tietokantatauluun `Expense`
+- tulojen tiedot (määrä, käyttäjätunnus) talletetaan SQLite- tietokantatauluun `Income`
+
 ## Toimintalogiikka
 
 ### Luodaan uusi käyttäjä
