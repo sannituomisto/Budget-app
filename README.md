@@ -16,6 +16,7 @@ Käyttäjät voivat sovelluksella budjetoida omia kulujaan. Sovelluksessa jokain
 #### Releases
 - [viikko5 release](https://github.com/sannituomisto/ot-harjoitustyo/releases/tag/viikko5)
 - [viikko6 release](https://github.com/sannituomisto/ot-harjoitustyo/releases/tag/viikko6)
+- [loppupalautus](https://github.com/sannituomisto/ot-harjoitustyo/releases/tag/Loppupalautus)
 
 ## Asennus
 1. Riippuvuudet asennetaan komennolla:
