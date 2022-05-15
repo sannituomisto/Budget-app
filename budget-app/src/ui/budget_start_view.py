@@ -96,7 +96,8 @@ class BudgetStartView:
         self._sum_var = StringVar(self._frame)
         self._sum_label = ttk.Label(
             master=self._frame, textvariable=self._sum_var)
-        self._sum_label.grid(row=6, padx=5, pady=5)
+        self._sum_label.grid(row=6, sticky=(
+            constants.W), columnspan=2, padx=(15, 0), pady=5)
 
         category_sum_label = ttk.Label(
             master=self._frame, text=f"Total sum by category:")
