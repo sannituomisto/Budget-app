@@ -33,7 +33,7 @@ Voit siirtyä kirjaamaan tuloja ja menoja sekä kirjautua ulos alla olevassa nä
 
 ![koti.png](./pictures/koti.png)
 
-Painamalla _Eneter new expense or income_- painiketta pääset kirjaamaan tuloja ja menoja. Painamalla _LOG OUT_- painiketta voit kirjautua ulos sovelluksesta.
+Painamalla _Enter new expense or income_- painiketta pääset kirjaamaan tuloja ja menoja. Painamalla _LOG OUT_- painiketta voit kirjautua ulos sovelluksesta. Painamalla _Clear your budget_- painiketta voit nollata tulosi ja kulusi (HUOM! Et saa takaisin poistettuja tietoja). Valitsemalla pudotusvalikosta categorian pystyt näkemään valitsemasi kategorian kulujen yhteissumman.
 
 ## Tulojen ja menojen kirjaaminen
 Tulojen ja menojen kirjaaminen tapahtuu alla olevassa näkymässä:
