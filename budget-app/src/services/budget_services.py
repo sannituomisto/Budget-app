@@ -67,7 +67,8 @@ class BudgetServices:
             password: Käyttäjän merkkijonoarvoinen salasana
 
         Raises:
-            InvalidCredentialsError: Virhe, joka syntyy, jos käyttäjätunnus ja salasana eivät ole oikein
+            InvalidCredentialsError: Virhe, joka syntyy,
+            jos käyttäjätunnus ja salasana eivät ole oikein
 
         Returns:
             Käyttäjä User-oliona
@@ -93,7 +94,7 @@ class BudgetServices:
 
         Args:
             amount: Kulun suuruus lukuarvona
-            category: Kulun merkkijonoarvoinen kategoria 
+            category: Kulun merkkijonoarvoinen kategoria
             username: Käyttäjän merkkijonoarvoinen käyttäjätunnus
 
         Returns:
@@ -125,26 +126,73 @@ class BudgetServices:
         self._user = None
 
     def get_income_sum(self, username):
-        income_sum=self._budget_repository.incomes_sum(username)
+        """Hakee käyttäjän tulojen summan
+
+        Args:
+            username: Käyttäjän merkkijonoarvoinen käyttäjätunnus
+
+        Returns:
+            Summa lukuna
+        """
+        income_sum = self._budget_repository.incomes_sum(username)
         return income_sum
 
     def get_expense_sum(self, username):
-        expense_sum=self._budget_repository.expense_sum(username)
+        """Hakee käyttäjän kulujen summan
+
+        Args:
+            username: Käyttäjän merkkijonoarvoinen käyttäjätunnus
+
+        Returns:
+            Summa lukuna
+        """
+        expense_sum = self._budget_repository.expense_sum(username)
         return expense_sum
 
     def get_expense_sum_by_category(self, username, category):
-        expense_sum_by_category=self._budget_repository.expense_sum_by_category(username, category)
+        """Hakee käyttäjän menojen summan kategorioittain
+
+        Args:
+            username: Käyttäjän merkkijonoarvoinen käyttäjätunnus
+            category: Kulun merkkijonoarvoinen kategoria
+
+        Returns:
+            Summa lukuna
+        """
+        expense_sum_by_category = self._budget_repository.expense_sum_by_category(
+            username, category)
         return expense_sum_by_category
 
     def get_all_incomes(self, username):
-        all_incomes=self._budget_repository.find_all_income(username)
+        """Hakee käyttäjän tulot
+
+        Args:
+            username: Käyttäjän merkkijonoarvoinen käyttäjätunnus
+
+        Returns:
+            Tulot listana
+        """
+        all_incomes = self._budget_repository.find_all_income(username)
         return all_incomes
 
     def get_all_expenses(self, username):
-        all_expenses=self._budget_repository.find_all_expense(username)
+        """Hakee käyttäjän kulut
+
+        Args:
+            username: Käyttäjän merkkijonoarvoinen käyttäjätunnus
+
+        Returns:
+            Menot listana
+        """
+        all_expenses = self._budget_repository.find_all_expense(username)
         return all_expenses
 
     def delete_all_from_user(self, username):
+        """Poistaa käyttäjän tulot ja kulut
+
+        Args:
+            username: Käyttäjän merkkijonoarvoinen käyttäjätunnus
+        """
         self._budget_repository.delete_all_from_user(username)
 
 

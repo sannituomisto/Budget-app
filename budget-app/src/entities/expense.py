@@ -3,7 +3,7 @@ class Expense:
 
     Attributes:
         amount: Kulun suuruus lukuarvona
-        category: Kulun merkkijonoarvoinen kategoria 
+        category: Kulun merkkijonoarvoinen kategoria
         username: Käyttäjän merkkijonoarvoinen käyttäjätunnus
     """
 
@@ -12,7 +12,7 @@ class Expense:
 
         Args:
             amount: Kulun suuruus lukuarvona
-            category: Kulun merkkijonoarvoinen kategoria 
+            category: Kulun merkkijonoarvoinen kategoria
             username: Käyttäjän merkkijonoarvoinen käyttäjätunnus
         """
 
