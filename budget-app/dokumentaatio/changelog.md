@@ -9,4 +9,7 @@ Tehtiin sovelluksen käyttöliittymää ja lisättiin kirjautumissivu, käyttäj
 Edistettiin sovelluksen käyttöliittymää. Tehtiin tulojen ja menojen kirjaamiseen tarvittavat toiminnot ja nyt tulot ja menot tallentuvat tietokantaan. Tehtiin lisää testejä tulojen ja menojen kirjaamiseen liittyen ja testit menevät läpi.
 
 ### Viikko 6
-Edistettiin ededleen sovelluksen käyttöliittymää keskittyen erityisesti kotinäkymään. Tehtiin uloskirjautumiseen vaadittavat toiminnot.
+Edistettiin edelleen sovelluksen käyttöliittymää keskittyen erityisesti kotinäkymään. Tehtiin uloskirjautumiseen vaadittavat toiminnot.
+
+### Viikko 7
+Edistettiin edelleen vielä sovelluksen käyttöliittymää keskittyen taas kotinäkymään mutta muutoksia tuli vielä tulojen ja kulujen kirjaamisnäkymässä. Tehtiin lisää testejä ja korjattiin pylint tarkistuksen virheet.
