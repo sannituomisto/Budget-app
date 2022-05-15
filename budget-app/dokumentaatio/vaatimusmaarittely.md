@@ -19,8 +19,9 @@ Sovelluksella on yksi käyttäjärooli, joka on ns. normaali käyttäjä. Normaa
 - Käyttäjä voi kirjata omat menot ***tehty***
 - Käyttäjä voi lajitella menot omiin kategorioihinsa ***tehty***
 - Käyttäjä näkee yhteenvedon tuloista ja menoista ***tehty***
+- Käyttäjä näkee kulujen yhteissumman kategorioittain ***tehty***
 - Käyttäjä voi kirjautua ulos sovelluksesta ***tehty***
-- Käyttäjä voi tyhjentää budjetin
+- Käyttäjä voi tyhjentää budjetin ***tehty***
 ## Kehitysideat
 - Käyttäjä voi luoda omia budjettisuunnitelmia kirjaamalla kuinka paljon rahaa tiettyssä ajassa haluaa käyttää
 - Omien säästötavoitteiden luominen
