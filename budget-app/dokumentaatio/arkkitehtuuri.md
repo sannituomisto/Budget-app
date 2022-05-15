@@ -47,3 +47,18 @@ Sovellus toimii alla olevan sekvenssikaavion mukaan, kun kirjautumisikkunassa k�
 ![login_sek](./pictures/login_sek.png)
 
 *LOG IN* -napin painaminen kutsuu `BudgetServices` luokan `login` metodia ja parametreiksi ottaa käyttäjän syöttämät käyttäjätunnuksen ja salasanan. `UserRepositoryn` avulla selvitetään onko käyttäjänimi olemassa ja täsmääkö salasanat. Jos käyttäjä löytyy ja salasana on oikein, käyttäjä kirjataan sisään ja käyttöliittymä vaihtaa näkymäksi budget-appin aloitus- eli kotisivun.
+
+### Luodaan uusi kulu
+Sovellus toimii alla olevan sekvenssikaavion mukaan, kun tulojen ja kulujen kirjaamisikkunassa käyttäjä valitsee pudotusvalikosta kategorian, syöttää kulun määrän ja painaa *Add* -nappia.
+
+![new_expense_sek](./pictures/new_expense_sek.png)
+
+*Add* -napin painaminen kutsuu `BudgetServices` luokan `create_expense` metodia ja parametriksi ottaa määrän, kategorian ja käyttäjätunnuksen. Uusi kulu luodaan ja käyttöliittymä kutsuu uudestaan tulojen ja kulujen kirjaamisikkunaa.
+
+### Luodaan uusi tulo
+Sovellus toimii alla olevan sekvenssikaavion mukaan, kun tulojen ja kulujen kirjaamisikkunassa käyttäjä syöttää tulos määrän ja painaa *Add* -nappia.
+
+![new_income_sek](./pictures/new_income_sek.png)
+
+*Add* -napin painaminen kutsuu `BudgetServices` luokan `create_income` metodia ja parametriksi ottaa määrän ja käyttäjätunnuksen. Uusi tulo luodaan ja käyttöliittymä kutsuu uudestaan tulojen ja kulujen kirjaamisikkunaa.
+
