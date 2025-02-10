@@ -1,6 +1,6 @@
-# **Budget-app**
-#### (Osana ohjelmistotekniikka-kurssia tehty pienimuotoinen harjoitustyö)
-
+# :moneybag: **Budget-app**
+#### Osana ohjelmistotekniikka-kurssia tehty pienimuotoinen harjoitustyö / A small project completed as part of the Software Engineering course.
+#### :bangbang: Documentation for this project is only in finnish
 Käyttäjät voivat sovelluksella budjetoida omia kulujaan. Sovelluksessa jokainen käyttäjä rekistöröityy sovellukseen, jolloin jokainen käyttäjä voi seurata omia tulojaan ja menojaan.
 ## Dokumentaatio
 #### Määrittelydokumentti 
